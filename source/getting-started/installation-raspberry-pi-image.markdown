@@ -73,7 +73,7 @@ Log in as the `pi` account and execute the following commands:
 ```bash
 $ sudo systemctl stop home-assistant@homeassistant.service 
 $ sudo su -s /bin/bash homeassistant
-$  source /srv/homeassistant/bin/activate
+$ source /srv/homeassistant/bin/activate
 $ pip3 install --upgrade homeassistant
 $ exit
 $ sudo systemctl start home-assistant@homeassistant.service
@@ -130,6 +130,14 @@ Log in as the `pi` account and execute the following commands:
 
 ```bash
 $ sudo journalctl -fu home-assistant@homeassistant.service
+```
+
+### {% linkable_title dailout permission}
+When using USB devices users have to give dialout permission to the user `homeassistant` and restart after it to let it work.
+
+```bash
+$ sudo usermod -a -G dialout homeassistant
+$ sudo reboot
 ```
 
 #### {% linkable_title Edit the Home Assistant configuration on HASSbian %}
