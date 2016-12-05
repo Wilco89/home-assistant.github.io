@@ -160,6 +160,14 @@ $ sudo apt-get upgrade
 
 Press `Y` to confirm that you would like to continue.
 
+### {% linkable_title dailout permission}
+When using USB devices users have to give dialout permission to the user `homeassistant` and restart after it to let it work.
+
+```bash
+$ sudo usermod -a -G dialout homeassistant
+$ sudo reboot
+```
+
 ### {% linkable_title Troubleshooting %}
 
 If you run into any issues, please see [the troubleshooting page](/getting-started/troubleshooting/). It contains solutions to many of the more commonly encountered issues.
